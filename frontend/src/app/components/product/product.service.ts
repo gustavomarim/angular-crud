@@ -8,7 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class ProductService {
-  private BASE_URL = 'http://localhost:3001/products';
+  private BASE_API_URL = 'http://localhost:3001/products';
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -21,7 +21,14 @@ export class ProductService {
   }
 
   // Serviço de criação de produto
+  // no backend
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.BASE_URL, product);
+    return this.http.post<Product>(this.BASE_API_URL, product);
+  }
+
+  // Serviço de leitura de produtos do backend;
+  // Observable recebe um array de produtos
+  read(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.BASE_API_URL);
   }
 }
