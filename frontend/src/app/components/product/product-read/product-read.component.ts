@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class ProductReadComponent implements OnInit {
 
   products!: Product[];
+  
+  // Definição de estrutura de display de colunas
+  // exibidas na tabela
+  displayedColumns = ['id', 'name', 'price'];
 
   constructor(private productService: ProductService) { }
 
