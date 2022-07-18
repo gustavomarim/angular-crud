@@ -43,9 +43,17 @@ export class ProductService {
     return this.http.get<Product>(url);
   }
 
-  // Serviço que atualiza o produto a partir de seu ID
+  // Serviço que atualiza o produto 
+  // a partir de seu ID
   update(product: Product): Observable<Product> {
     const url = `${this.BASE_API_URL}/${product.id}`;
     return this.http.put<Product>(url, product);
+  }
+
+  // Serviço que deleta um produto 
+  // a partir de seu ID
+  delete(id: string): Observable<Product> {
+    const url = `${this.BASE_API_URL}/${id}`;
+    return this.http.delete<Product>(url);
   }
 }
