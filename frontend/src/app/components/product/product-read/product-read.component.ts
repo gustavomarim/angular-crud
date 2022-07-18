@@ -13,7 +13,7 @@ export class ProductReadComponent implements OnInit {
   
   // Definição de estrutura de display de colunas
   // exibidas na tabela
-  displayedColumns = ['id', 'name', 'price'];
+  displayedColumns = ['id', 'name', 'price', 'action'];
 
   constructor(private productService: ProductService) { }
 
